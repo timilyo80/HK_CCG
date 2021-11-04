@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Animation/Mana.png" type="Texture" id=1]
+[ext_resource path="res://SpriteSheet/BaseAttack.png" type="Texture" id=1]
 
 [sub_resource type="Animation" id=1]
-resource_name = "Half"
+resource_name = "Attack"
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
@@ -24,8 +24,7 @@ tracks/0/keys = {
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 1 )
 hframes = 5
-frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite")
-anims/Half = SubResource( 1 )
+anims/Attack = SubResource( 1 )

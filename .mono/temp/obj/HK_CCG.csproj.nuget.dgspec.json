@@ -1,0 +1,47 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Users\\emg08\\Desktop\\Creative_Folder\\Godot\\HK_CCG\\HK_CCG.csproj": {}
+  },
+  "projects": {
+    "D:\\Users\\emg08\\Desktop\\Creative_Folder\\Godot\\HK_CCG\\HK_CCG.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Users\\emg08\\Desktop\\Creative_Folder\\Godot\\HK_CCG\\HK_CCG.csproj",
+        "projectName": "HK_CCG",
+        "projectPath": "D:\\Users\\emg08\\Desktop\\Creative_Folder\\Godot\\HK_CCG\\HK_CCG.csproj",
+        "packagesPath": "C:\\Users\\emg08\\.nuget\\packages\\",
+        "outputPath": "D:\\Users\\emg08\\Desktop\\Creative_Folder\\Godot\\HK_CCG\\.mono\\temp\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\emg08\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "targetAlias": "net472",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "targetAlias": "net472",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.208\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

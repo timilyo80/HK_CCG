@@ -1,0 +1,347 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://SpriteSheet/Mana.png" type="Texture" id=1]
+[ext_resource path="res://Image/PlayerLife.png" type="Texture" id=2]
+[ext_resource path="res://Image/EnemyLife.png" type="Texture" id=3]
+[ext_resource path="res://Objects/Slot.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Image/BatleField.png" type="Texture" id=5]
+[ext_resource path="res://Objects/Card.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Script/CombatScene.cs" type="Script" id=7]
+[ext_resource path="res://Image/Background.jpg" type="Texture" id=8]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Full"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Half"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
+}
+
+[node name="CombatScene" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="Hud" type="CanvasLayer" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Hud"]
+position = Vector2( 510.684, 299.573 )
+scale = Vector2( 0.559977, 0.559977 )
+texture = ExtResource( 8 )
+
+[node name="Battlefield" type="MarginContainer" parent="Hud"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -516.0
+margin_top = -202.0
+margin_right = 516.0
+margin_bottom = 202.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="Hud/Battlefield"]
+margin_right = 1032.0
+margin_bottom = 404.0
+texture = ExtResource( 5 )
+expand = true
+
+[node name="Slots_Contener" type="CenterContainer" parent="Hud/Battlefield"]
+margin_right = 1032.0
+margin_bottom = 404.0
+
+[node name="Rows" type="VBoxContainer" parent="Hud/Battlefield/Slots_Contener"]
+margin_left = 131.0
+margin_right = 901.0
+margin_bottom = 404.0
+
+[node name="Line1" type="HBoxContainer" parent="Hud/Battlefield/Slots_Contener/Rows"]
+margin_right = 770.0
+margin_bottom = 200.0
+
+[node name="Slot1" parent="Hud/Battlefield/Slots_Contener/Rows/Line1" instance=ExtResource( 4 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 125.0
+margin_bottom = 200.0
+
+[node name="Slot2" parent="Hud/Battlefield/Slots_Contener/Rows/Line1" instance=ExtResource( 4 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 129.0
+margin_top = 0.0
+margin_right = 254.0
+margin_bottom = 200.0
+
+[node name="Slot3" parent="Hud/Battlefield/Slots_Contener/Rows/Line1" instance=ExtResource( 4 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 258.0
+margin_top = 0.0
+margin_right = 383.0
+margin_bottom = 200.0
+
+[node name="Slot4" parent="Hud/Battlefield/Slots_Contener/Rows/Line1" instance=ExtResource( 4 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 387.0
+margin_top = 0.0
+margin_right = 512.0
+margin_bottom = 200.0
+
+[node name="Slot5" parent="Hud/Battlefield/Slots_Contener/Rows/Line1" instance=ExtResource( 4 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 516.0
+margin_top = 0.0
+margin_right = 641.0
+margin_bottom = 200.0
+
+[node name="Slot6" parent="Hud/Battlefield/Slots_Contener/Rows/Line1" instance=ExtResource( 4 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 645.0
+margin_top = 0.0
+margin_right = 770.0
+margin_bottom = 200.0
+
+[node name="Line2" type="HBoxContainer" parent="Hud/Battlefield/Slots_Contener/Rows"]
+margin_top = 204.0
+margin_right = 770.0
+margin_bottom = 404.0
+
+[node name="Slot1" parent="Hud/Battlefield/Slots_Contener/Rows/Line2" instance=ExtResource( 4 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 125.0
+margin_bottom = 200.0
+
+[node name="Slot2" parent="Hud/Battlefield/Slots_Contener/Rows/Line2" instance=ExtResource( 4 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 129.0
+margin_top = 0.0
+margin_right = 254.0
+margin_bottom = 200.0
+
+[node name="Slot3" parent="Hud/Battlefield/Slots_Contener/Rows/Line2" instance=ExtResource( 4 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 258.0
+margin_top = 0.0
+margin_right = 383.0
+margin_bottom = 200.0
+
+[node name="Slot4" parent="Hud/Battlefield/Slots_Contener/Rows/Line2" instance=ExtResource( 4 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 387.0
+margin_top = 0.0
+margin_right = 512.0
+margin_bottom = 200.0
+
+[node name="Slot5" parent="Hud/Battlefield/Slots_Contener/Rows/Line2" instance=ExtResource( 4 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 516.0
+margin_top = 0.0
+margin_right = 641.0
+margin_bottom = 200.0
+
+[node name="Slot6" parent="Hud/Battlefield/Slots_Contener/Rows/Line2" instance=ExtResource( 4 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 645.0
+margin_top = 0.0
+margin_right = 770.0
+margin_bottom = 200.0
+
+[node name="Player_Hand" type="MarginContainer" parent="Hud"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -28.3162
+margin_top = -110.332
+margin_right = -28.3162
+margin_bottom = 89.6681
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Hud/Player_Hand"]
+margin_right = 1024.0
+margin_bottom = 200.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Hud/Player_Hand/CenterContainer"]
+margin_left = 194.0
+margin_right = 830.0
+margin_bottom = 200.0
+
+[node name="Card1" parent="Hud/Player_Hand/CenterContainer/HBoxContainer" instance=ExtResource( 6 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 60.0
+margin_bottom = 200.0
+
+[node name="Card2" parent="Hud/Player_Hand/CenterContainer/HBoxContainer" instance=ExtResource( 6 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 64.0
+margin_right = 124.0
+margin_bottom = 200.0
+
+[node name="Card3" parent="Hud/Player_Hand/CenterContainer/HBoxContainer" instance=ExtResource( 6 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 128.0
+margin_right = 188.0
+margin_bottom = 200.0
+
+[node name="Card4" parent="Hud/Player_Hand/CenterContainer/HBoxContainer" instance=ExtResource( 6 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 192.0
+margin_right = 252.0
+margin_bottom = 200.0
+
+[node name="Card5" parent="Hud/Player_Hand/CenterContainer/HBoxContainer" instance=ExtResource( 6 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 256.0
+margin_right = 316.0
+margin_bottom = 200.0
+
+[node name="Card6" parent="Hud/Player_Hand/CenterContainer/HBoxContainer" instance=ExtResource( 6 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 320.0
+margin_right = 380.0
+margin_bottom = 200.0
+
+[node name="Card7" parent="Hud/Player_Hand/CenterContainer/HBoxContainer" instance=ExtResource( 6 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 384.0
+margin_right = 444.0
+margin_bottom = 200.0
+
+[node name="Card8" parent="Hud/Player_Hand/CenterContainer/HBoxContainer" instance=ExtResource( 6 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 448.0
+margin_right = 508.0
+margin_bottom = 200.0
+
+[node name="Card9" parent="Hud/Player_Hand/CenterContainer/HBoxContainer" instance=ExtResource( 6 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 512.0
+margin_right = 572.0
+margin_bottom = 200.0
+
+[node name="Card10" parent="Hud/Player_Hand/CenterContainer/HBoxContainer" instance=ExtResource( 6 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 576.0
+margin_right = 636.0
+margin_bottom = 200.0
+
+[node name="Mana" type="CenterContainer" parent="Hud"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -143.0
+margin_top = -139.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mana_Sprite" type="Sprite" parent="Hud/Mana"]
+position = Vector2( 73.7585, 70.5188 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+hframes = 5
+
+[node name="Mana_AnimationPlayer" type="AnimationPlayer" parent="Hud/Mana/Mana_Sprite"]
+autoplay = "Full"
+anims/Full = SubResource( 1 )
+anims/Half = SubResource( 2 )
+
+[node name="Player_Life" type="TextureRect" parent="Hud"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = -38.6221
+margin_top = -147.108
+margin_right = 139.378
+margin_bottom = 21.892
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enemy_Life" type="TextureRect" parent="Hud"]
+margin_left = -38.0833
+margin_top = -30.9349
+margin_right = 138.917
+margin_bottom = 158.065
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

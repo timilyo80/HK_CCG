@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BaseAttack.png-574f7e1200e1da21e2ac6f4845e9a382.stex"
+path="res://.import/BaseAttack.png-bf49c912889e7eabeb56aad9ad4d510f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Animation/BaseAttack.png"
-dest_files=[ "res://.import/BaseAttack.png-574f7e1200e1da21e2ac6f4845e9a382.stex" ]
+source_file="res://SpriteSheet/BaseAttack.png"
+dest_files=[ "res://.import/BaseAttack.png-bf49c912889e7eabeb56aad9ad4d510f.stex" ]
 
 [params]
 
