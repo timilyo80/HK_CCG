@@ -15,7 +15,7 @@ public class Slot_TextureButton : TextureButton
 	{
 		if (PlayerLine == true)
 		{
-			GD.Print("Slot Clicked");
+			//GD.Print("Slot Clicked");
 		}
 	}
 

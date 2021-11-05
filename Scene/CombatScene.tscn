@@ -103,6 +103,7 @@ margin_left = 129.0
 margin_top = 0.0
 margin_right = 254.0
 margin_bottom = 200.0
+ID = 1
 
 [node name="Slot3" parent="Hud/Battlefield/Slots_Contener/Rows/Line1" instance=ExtResource( 4 )]
 anchor_left = 0.0
@@ -113,6 +114,7 @@ margin_left = 258.0
 margin_top = 0.0
 margin_right = 383.0
 margin_bottom = 200.0
+ID = 2
 
 [node name="Slot4" parent="Hud/Battlefield/Slots_Contener/Rows/Line1" instance=ExtResource( 4 )]
 anchor_left = 0.0
@@ -123,6 +125,7 @@ margin_left = 387.0
 margin_top = 0.0
 margin_right = 512.0
 margin_bottom = 200.0
+ID = 3
 
 [node name="Slot5" parent="Hud/Battlefield/Slots_Contener/Rows/Line1" instance=ExtResource( 4 )]
 anchor_left = 0.0
@@ -133,6 +136,7 @@ margin_left = 516.0
 margin_top = 0.0
 margin_right = 641.0
 margin_bottom = 200.0
+ID = 4
 
 [node name="Slot6" parent="Hud/Battlefield/Slots_Contener/Rows/Line1" instance=ExtResource( 4 )]
 anchor_left = 0.0
@@ -143,6 +147,7 @@ margin_left = 645.0
 margin_top = 0.0
 margin_right = 770.0
 margin_bottom = 200.0
+ID = 5
 
 [node name="Line2" type="HBoxContainer" parent="Hud/Battlefield/Slots_Contener/Rows"]
 margin_top = 204.0
@@ -158,6 +163,7 @@ margin_left = 0.0
 margin_top = 0.0
 margin_right = 125.0
 margin_bottom = 200.0
+PlayerLine = true
 
 [node name="Slot2" parent="Hud/Battlefield/Slots_Contener/Rows/Line2" instance=ExtResource( 4 )]
 anchor_left = 0.0
@@ -168,6 +174,8 @@ margin_left = 129.0
 margin_top = 0.0
 margin_right = 254.0
 margin_bottom = 200.0
+PlayerLine = true
+ID = 1
 
 [node name="Slot3" parent="Hud/Battlefield/Slots_Contener/Rows/Line2" instance=ExtResource( 4 )]
 anchor_left = 0.0
@@ -178,6 +186,8 @@ margin_left = 258.0
 margin_top = 0.0
 margin_right = 383.0
 margin_bottom = 200.0
+PlayerLine = true
+ID = 2
 
 [node name="Slot4" parent="Hud/Battlefield/Slots_Contener/Rows/Line2" instance=ExtResource( 4 )]
 anchor_left = 0.0
@@ -188,6 +198,8 @@ margin_left = 387.0
 margin_top = 0.0
 margin_right = 512.0
 margin_bottom = 200.0
+PlayerLine = true
+ID = 3
 
 [node name="Slot5" parent="Hud/Battlefield/Slots_Contener/Rows/Line2" instance=ExtResource( 4 )]
 anchor_left = 0.0
@@ -198,6 +210,8 @@ margin_left = 516.0
 margin_top = 0.0
 margin_right = 641.0
 margin_bottom = 200.0
+PlayerLine = true
+ID = 4
 
 [node name="Slot6" parent="Hud/Battlefield/Slots_Contener/Rows/Line2" instance=ExtResource( 4 )]
 anchor_left = 0.0
@@ -208,6 +222,8 @@ margin_left = 645.0
 margin_top = 0.0
 margin_right = 770.0
 margin_bottom = 200.0
+PlayerLine = true
+ID = 5
 
 [node name="Player_Hand" type="MarginContainer" parent="Hud"]
 anchor_top = 1.0

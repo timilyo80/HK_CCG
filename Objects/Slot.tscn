@@ -1,13 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Image/Button1.png" type="Texture" id=1]
 [ext_resource path="res://Script/Slot_TextureButton.cs" type="Script" id=2]
+[ext_resource path="res://Script/Slot.cs" type="Script" id=3]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 1 )
 region_rect = Rect2( 0, 0, 1103, 412 )
 
-[node name="Slot" type="Control"]
+[node name="Slot" type="Control" groups=[
+"Slots",
+]]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -17,6 +20,7 @@ margin_top = -300.0
 margin_right = -387.0
 margin_bottom = -100.0
 rect_min_size = Vector2( 125, 200 )
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -30,7 +34,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="Button" type="TextureButton" parent="."]
 margin_right = 125.0
 margin_bottom = 200.0
 script = ExtResource( 2 )
@@ -38,4 +42,5 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="Button" to="Button" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_TextureButton_pressed"]

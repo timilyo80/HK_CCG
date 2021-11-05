@@ -18,6 +18,10 @@ config/name="HK_CCG"
 run/main_scene="res://Scene/CombatScene.tscn"
 config/icon="res://Image/icon.png"
 
+[autoload]
+
+ManageGame="*res://Script/Manager_InGame.cs"
+
 [input]
 
 Click={

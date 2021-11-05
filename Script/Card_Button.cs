@@ -10,7 +10,7 @@ public class Card_Button : TextureButton
 
 	private void _on_TextureButton_pressed()
 	{
-		GD.Print("Card Click");
+		//GD.Print("Card Click");
 	}
 
 }
