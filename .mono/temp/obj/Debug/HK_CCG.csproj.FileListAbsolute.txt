@@ -1,4 +1,3 @@
-D:\Users\emg08\Desktop\Creative_Folder\Godot\HK_CCG\.mono\temp\obj\Debug\HK_CCG.csprojAssemblyReference.cache
 D:\Users\emg08\Desktop\Creative_Folder\Godot\HK_CCG\.mono\temp\obj\Debug\HK_CCG.AssemblyInfoInputs.cache
 D:\Users\emg08\Desktop\Creative_Folder\Godot\HK_CCG\.mono\temp\obj\Debug\HK_CCG.AssemblyInfo.cs
 D:\Users\emg08\Desktop\Creative_Folder\Godot\HK_CCG\.mono\temp\obj\Debug\HK_CCG.csproj.CoreCompileInputs.cache
@@ -6,3 +5,5 @@ D:\Users\emg08\Desktop\Creative_Folder\Godot\HK_CCG\.mono\temp\bin\Debug\HK_CCG.
 D:\Users\emg08\Desktop\Creative_Folder\Godot\HK_CCG\.mono\temp\bin\Debug\HK_CCG.pdb
 D:\Users\emg08\Desktop\Creative_Folder\Godot\HK_CCG\.mono\temp\obj\Debug\HK_CCG.dll
 D:\Users\emg08\Desktop\Creative_Folder\Godot\HK_CCG\.mono\temp\obj\Debug\HK_CCG.pdb
+D:\Users\emg08\Desktop\Creative_Folder\Godot\HK_CCG\.mono\temp\obj\Debug\HK_CCG.csproj.AssemblyReference.cache
+D:\Users\emg08\Desktop\Creative_Folder\Godot\HK_CCG\.mono\temp\obj\Debug\HK_CCG.GeneratedMSBuildEditorConfig.editorconfig

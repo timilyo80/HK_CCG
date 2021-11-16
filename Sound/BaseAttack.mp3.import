@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/BaseAttack.mp3-b5f2888a22692357371439745bfb549d.mp3str"
+
+[deps]
+
+source_file="res://Sound/BaseAttack.mp3"
+dest_files=[ "res://.import/BaseAttack.mp3-b5f2888a22692357371439745bfb549d.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

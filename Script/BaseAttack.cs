@@ -7,6 +7,7 @@ public class BaseAttack : Node2D
 	AnimationPlayer animPlayer;
 	AnimationTree animTree;
 	AnimationNodeStateMachinePlayback animState;
+	AudioStreamPlayer sound;
 
 	public override void _Ready()
 	{
@@ -14,5 +15,7 @@ public class BaseAttack : Node2D
 		animPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
 		
 		animPlayer.Play("Attack");
+		sound = GetNode<AudioStreamPlayer>("Sound");
+		sound.Play();
 	}
 }

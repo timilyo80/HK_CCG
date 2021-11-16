@@ -9,34 +9,42 @@ public class Slot : Control
 	public int ID;
 	
 	public bool Active = false;
-	public Card selectedCard;
 	public Card filledCard;
+	private CombatScene combatScene;
 	
 	//public TextureButton btn = GetNode<TextureButton>("Button");
 	
 	public override void _Ready()
 	{
+
+	}
+
+	public void Initialise(int id, CombatScene cs, bool playerLine)
+	{
+		combatScene = cs;
+		PlayerLine = playerLine;
+		ID = id;
+
 		if (!PlayerLine)
 		{
 			var x = (PackedScene)ResourceLoader.Load("res://Objects/Card.tscn");
 			filledCard = (Card)x.Instance();
-			AddChild(filledCard);
+			filledCard.Initialise(ID, ID, ID, ID, combatScene);
 			filledCard.enemy = true;
-			filledCard.active = false;
+			filledCard.Deactivate();
+			AddChild(filledCard);
 		}
 	}
 	
 	private void _on_TextureButton_pressed()
 	{
-		if (PlayerLine == true && Active == true && selectedCard != null)
+		if (PlayerLine == true && Active == true)
 		{
-			GD.Print("Slot Clicked");
-			var x = (PackedScene)ResourceLoader.Load("res://Objects/Card.tscn");
-			filledCard = (Card)x.Instance();
+			GD.Print("Slot Clicked = " + ID);
+			filledCard = combatScene.SlotGetCard();
 			AddChild(filledCard);
 			filledCard.inBattle = true;
-			filledCard.ID = this.ID;
-			selectedCard.QueueFree();
+			filledCard.slot = this;
 			GetTree().CallGroup("Slots", "Deactivate");
 			GetTree().CallGroup("Cards", "Activate");
 		}
@@ -52,21 +60,31 @@ public class Slot : Control
 		this.Active = false;
 	}
 
-	public void ReadyToPair(Card card)
+	public void ReadyToPair()
 	{
-		this.selectedCard = card;
 		this.Activate();
 	}
 
-	public void Attack(int id)
+	public void Attack(int damage)
 	{
-		if (!PlayerLine && ID == id)
-		if (true)
+		if (!PlayerLine)
 		{
-			var x = (PackedScene)ResourceLoader.Load("res://Animation/BaseAttack.tscn");
-			BaseAttack y = (BaseAttack)x.Instance();
-			AddChild(y);
-			filledCard.QueueFree();
+			if (filledCard != null)
+			{
+				GD.Print("damage = " + damage + " to: " + ID);
+				var x = (PackedScene)ResourceLoader.Load("res://Animation/BaseAttack.tscn");
+				BaseAttack y = (BaseAttack)x.Instance();
+				AddChild(y);
+				filledCard.Damaged(damage);
+
+				if (filledCard.lifeInt == 0)
+				{
+					filledCard.QueueFree();
+					filledCard = null;
+				}
+			}
+			else
+				combatScene.AttackEnemy(damage);
 		}
 	}
 	

@@ -5,9 +5,7 @@
 [ext_resource path="res://Image/Card_OutLine.png" type="Texture" id=3]
 [ext_resource path="res://Script/Card.cs" type="Script" id=4]
 
-[node name="Card" type="Control" groups=[
-"Cards",
-]]
+[node name="Card" type="Control" groups=["Cards"]]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = -899.0
@@ -38,6 +36,34 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Life" type="Label" parent="."]
+margin_left = -4.0
+margin_top = 170.0
+margin_right = 16.0
+margin_bottom = 184.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="Attack" type="Label" parent="."]
+margin_left = 87.0
+margin_top = 170.0
+margin_right = 107.0
+margin_bottom = 184.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="Mana" type="Label" parent="."]
+margin_left = 8.0
+margin_top = 16.0
+margin_right = 48.0
+margin_bottom = 30.0
+rect_scale = Vector2( 2, 2 )
+text = "0"
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Button" to="Button" method="_on_TextureButton_pressed"]
