@@ -31,7 +31,7 @@ public class Card : Control
 		attack = GetNode<Label>("Attack");
 	}
 
-	public void Initialise(int id, int m, int l, int a, CombatScene cs)
+	public void Initialise(int id, int m, int a, int l, CombatScene cs)
 	{
 		btn = GetNode<TextureButton>("Button");
 		mana = GetNode<Label>("Mana");
@@ -39,12 +39,12 @@ public class Card : Control
 		attack = GetNode<Label>("Attack");
 
 		ID = id;
-		manaInt = ID;
-		attackInt = ID;
-		lifeInt = ID;
-		mana.Text = ID.ToString();
-		life.Text = ID.ToString();
-		attack.Text = ID.ToString();
+		manaInt = m;
+		attackInt = a;
+		lifeInt = l;
+		mana.Text = m.ToString();
+		attack.Text = a.ToString();
+		life.Text = l.ToString();
 		combatScene = cs;
 	}
 	
@@ -52,7 +52,6 @@ public class Card : Control
 	{
 		if (active)
 		{
-			GD.Print("Card Click = " + ID);
 			if (!inBattle && combatScene.GetMana() >= manaInt)
 			{
 				btn.TextureNormal = txtClicked;
@@ -61,11 +60,10 @@ public class Card : Control
 			}
 			else if (inBattle && !attacked)
 			{
-				GD.Print("ATTACK!!! = " + ID);
 				attacked = true;
 				GetTree().CallGroup("Cards", "Deactivate");
 				GetTree().CallGroup("Cards", "Activate");
-				combatScene.Attack(attackInt, slot.ID);
+				combatScene.Attack(attackInt, slot);
 			}
 		}
 	}

@@ -40,7 +40,6 @@ public class Slot : Control
 	{
 		if (PlayerLine == true && Active == true)
 		{
-			GD.Print("Slot Clicked = " + ID);
 			filledCard = combatScene.SlotGetCard();
 			AddChild(filledCard);
 			filledCard.inBattle = true;
@@ -65,26 +64,28 @@ public class Slot : Control
 		this.Activate();
 	}
 
-	public void Attack(int damage)
+	public void Attacked(int damage)
 	{
-		if (!PlayerLine)
+		if (filledCard != null)
 		{
-			if (filledCard != null)
-			{
-				GD.Print("damage = " + damage + " to: " + ID);
-				var x = (PackedScene)ResourceLoader.Load("res://Animation/BaseAttack.tscn");
-				BaseAttack y = (BaseAttack)x.Instance();
-				AddChild(y);
-				filledCard.Damaged(damage);
+			var x = (PackedScene)ResourceLoader.Load("res://Animation/BaseAttack.tscn");
+			BaseAttack y = (BaseAttack)x.Instance();
+			AddChild(y);
+			filledCard.Damaged(damage);
 
-				if (filledCard.lifeInt == 0)
-				{
-					filledCard.QueueFree();
-					filledCard = null;
-				}
+			if (filledCard.lifeInt == 0)
+			{
+				filledCard.QueueFree();
+				filledCard = null;
 			}
-			else
-				combatScene.AttackEnemy(damage);
+		}
+		else if (!PlayerLine)
+		{
+			combatScene.AttackEnemy(damage);
+		}
+		else
+		{
+			combatScene.AttackPlayer(damage);
 		}
 	}
 	
