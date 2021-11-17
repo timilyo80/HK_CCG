@@ -1,16 +1,16 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Image/Card_Base.png" type="Texture" id=1]
-[ext_resource path="res://Image/Card_OutLine.png" type="Texture" id=3]
-[ext_resource path="res://Script/Card.cs" type="Script" id=4]
+[ext_resource path="res://Script/Card_ForEdit.cs" type="Script" id=1]
+[ext_resource path="res://Image/Card_OutLine.png" type="Texture" id=2]
+[ext_resource path="res://Image/Card_Base.png" type="Texture" id=3]
 
-[node name="Card" type="Control" groups=["Cards"]]
+[node name="Card_ForEdit" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = -899.0
 margin_bottom = -400.0
-rect_min_size = Vector2( 60, 200 )
-script = ExtResource( 4 )
+rect_min_size = Vector2( 125, 200 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -19,7 +19,7 @@ __meta__ = {
 margin_right = 125.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 125, 200 )
-texture = ExtResource( 1 )
+texture = ExtResource( 3 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -29,7 +29,7 @@ __meta__ = {
 margin_right = 125.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 125, 200 )
-texture_hover = ExtResource( 3 )
+texture_hover = ExtResource( 2 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -48,9 +48,9 @@ __meta__ = {
 }
 
 [node name="Attack" type="Label" parent="."]
-margin_left = 82.0
+margin_left = 84.0
 margin_top = 170.0
-margin_right = 102.0
+margin_right = 104.0
 margin_bottom = 184.0
 rect_scale = Vector2( 2, 2 )
 text = "0"

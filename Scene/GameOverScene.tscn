@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Image/GameOver.JPG" type="Texture" id=1]
-[ext_resource path="res://Script/TitleScreen.cs" type="Script" id=2]
+[ext_resource path="res://Script/GameOver.cs" type="Script" id=2]
 [ext_resource path="res://Sound/SoundLose.wav" type="AudioStream" id=3]
 
 [node name="GameOverScene" type="Node2D"]

@@ -1,18 +1,18 @@
 {
   "0" :
   {
-    "Name" : "Radiance",
+    "Name" : "missingno",
     "Mana" : "0",
-    "Attack" : "10",
-    "Life" : "10"
+    "Attack" : "0",
+    "Life" : "0"
   },
 
   "1" :
   {
     "Name" : "Zote",
-    "Mana" : "1",
-    "Attack" : "1",
-    "Life" : "1"
+    "Mana" : "0",
+    "Attack" : "10",
+    "Life" : "10"
 
   },
   "2" :

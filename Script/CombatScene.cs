@@ -61,13 +61,22 @@ public class CombatScene : Node2D
 	public void PickCard()
 	{
 		if (deckIterator < deck.Length && hand.GetChildCount() < 10)
-		{
-			Card y = (Card)cardTemplate.Instance();
-			int z = GetCardID();
-			cardStat = manager.NewCard(deck[deckIterator]);
-			deckIterator++;
-			y.Initialise(z, cardStat[0], cardStat[1], cardStat[2], this);
-			hand.AddChild(y);
+		{			
+			do
+			{
+				cardStat = manager.NewCard(deck[deckIterator]);
+				deckIterator++;
+				GD.Print(deckIterator);
+			} while(deckIterator < deck.Length && deck[deckIterator-1] == 0);
+
+			if (deckIterator < deck.Length)
+			{
+				GD.Print(deckIterator);
+				Card y = (Card)cardTemplate.Instance();
+				int z = GetCardID();
+				y.Initialise(z, cardStat[0], cardStat[1], cardStat[2], this);
+				hand.AddChild(y);
+			}
 		}
 	}
 
