@@ -69,7 +69,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
+[node name="Deck_NMB" type="Label" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -77.0
@@ -77,7 +77,22 @@ margin_top = 6.0
 margin_right = -48.0
 margin_bottom = 20.0
 rect_scale = Vector2( 2, 2 )
-text = "0/20"
+text = "0/0"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Grid_NMB" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -77.0
+margin_top = 459.0
+margin_right = -48.0
+margin_bottom = 473.0
+rect_scale = Vector2( 2, 2 )
+text = "0-0"
 align = 2
 valign = 1
 __meta__ = {
@@ -110,3 +125,8 @@ margin_bottom = -11.0
 text = "=>"
 
 [connection signal="pressed" from="btn_Start" to="." method="_on_btn_Start_pressed"]
+[connection signal="pressed" from="btn_Edit" to="." method="_on_btn_Edit_pressed"]
+[connection signal="pressed" from="btn_Deck" to="." method="_on_btn_Deck_pressed"]
+[connection signal="pressed" from="btn_Preset" to="." method="_on_btn_Preset_pressed"]
+[connection signal="pressed" from="btn_Left" to="." method="_on_btn_Left_pressed"]
+[connection signal="pressed" from="btn_Right" to="." method="_on_btn_Right_pressed"]

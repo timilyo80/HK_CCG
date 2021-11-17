@@ -77,5 +77,54 @@
     "Mana" : "10",
     "Attack" : "10",
     "Life" : "10"
+  },
+  "11" :
+  {
+    "Name" : "Hornet",
+    "Mana" : "10",
+    "Attack" : "10",
+    "Life" : "10"
+  },
+  "12" :
+  {
+    "Name" : "Hornet",
+    "Mana" : "10",
+    "Attack" : "10",
+    "Life" : "10"
+  },
+  "13" :
+  {
+    "Name" : "Hornet",
+    "Mana" : "10",
+    "Attack" : "10",
+    "Life" : "10"
+  },
+  "14" :
+  {
+    "Name" : "Hornet",
+    "Mana" : "10",
+    "Attack" : "10",
+    "Life" : "10"
+  },
+  "15" :
+  {
+    "Name" : "Hornet",
+    "Mana" : "10",
+    "Attack" : "10",
+    "Life" : "10"
+  },
+  "16" :
+  {
+    "Name" : "Hornet",
+    "Mana" : "10",
+    "Attack" : "10",
+    "Life" : "10"
+  },
+  "17" :
+  {
+    "Name" : "Hornet",
+    "Mana" : "17",
+    "Attack" : "17",
+    "Life" : "17"
   }
 }

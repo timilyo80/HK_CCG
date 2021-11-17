@@ -66,12 +66,10 @@ public class CombatScene : Node2D
 			{
 				cardStat = manager.NewCard(deck[deckIterator]);
 				deckIterator++;
-				GD.Print(deckIterator);
 			} while(deckIterator < deck.Length && deck[deckIterator-1] == 0);
 
 			if (deckIterator < deck.Length)
 			{
-				GD.Print(deckIterator);
 				Card y = (Card)cardTemplate.Instance();
 				int z = GetCardID();
 				y.Initialise(z, cardStat[0], cardStat[1], cardStat[2], this);

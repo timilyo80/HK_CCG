@@ -41,8 +41,22 @@ public class Card_ForEdit : Control
 		deckEditor = de;
     }
 
+	public void ChangeInfo(int id, int m, int a, int l)
+	{
+		ID = id;
+		manaInt = m;
+		attackInt = a;
+		lifeInt = l;
+		mana.Text = m.ToString();
+		attack.Text = a.ToString();
+		life.Text = l.ToString();
+	}
+
     public void _on_Button_pressed()
     {
-        deckEditor.AddCard(ID);
+		if (deckEditor.showAllCards)
+        	deckEditor.AddCard(ID);
+		else
+			deckEditor.RemoveCard(ID);
     }
 }

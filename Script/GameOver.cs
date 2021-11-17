@@ -12,4 +12,9 @@ public class GameOver : Node2D
     {
         GetTree().ChangeScene("res://Scene/CombatScene.tscn");
     }
+
+    private void _on_Home_pressed()
+    {
+        GetTree().ChangeScene("res://Scene/TitleScreen.tscn");
+    }
 }
