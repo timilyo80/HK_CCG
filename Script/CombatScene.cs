@@ -12,10 +12,12 @@ public class CombatScene : Node2D
 	public Player_Life player_Life;
 	public Manager_InGame manager;
 	private Godot.PackedScene cardTemplate;
+	private AudioStreamPlayer music;
+	private Label forTest;
 	int cardID;
 	int[] deck;
 	int deckIterator = 0;
-	int[] cardStat;
+	string[] cardStat;
 	int maxRow = 6;
 	int maxCard = 10;
 
@@ -25,10 +27,17 @@ public class CombatScene : Node2D
 		manager = GetNode<Manager_InGame>("/root/DeckPlayer");
 		deck = manager.deckAlie;
 		mana = GetNode<Mana>("Hud/Mana/Mana");
+		music = GetNode<AudioStreamPlayer>("Music");
 		enemy_Life = GetNode<Player_Life>("Hud/Enemy_Life");
 		enemy_Life.enemy = true;
 		player_Life = GetNode<Player_Life>("Hud/Player_Life");
 		player_Life.enemy = false;
+		forTest = GetNode<Label>("Hud/Label");
+		if (!manager.test)
+			forTest.Visible = false;
+
+		if (manager.music)
+			music.Play();
 
 		rowEnemy = GetNode<HBoxContainer>("Hud/Battlefield/Slots_Contener/Rows/Line1");
 		var x = (PackedScene)ResourceLoader.Load("res://Objects/Slot.tscn");
@@ -36,6 +45,7 @@ public class CombatScene : Node2D
 		{
 			Slot y = (Slot)x.Instance();
 			//int z = GetCardID();
+			y._Ready();
 			y.Initialise(i, this, false);
 			rowEnemy.AddChild(y);
 		}
@@ -72,7 +82,11 @@ public class CombatScene : Node2D
 			{
 				Card y = (Card)cardTemplate.Instance();
 				int z = GetCardID();
-				y.Initialise(z, cardStat[0], cardStat[1], cardStat[2], this);
+				y.Initialise(z, int.Parse(cardStat[0]),
+					int.Parse(cardStat[1]),
+					int.Parse(cardStat[2]),
+					cardStat[3],
+					this);
 				hand.AddChild(y);
 			}
 		}
@@ -81,26 +95,46 @@ public class CombatScene : Node2D
 	public void CardReadyToPair(Card card)
 	{
 		selectedCard = card;
-		GetTree().CallGroup("Slots", "ReadyToPair");
+		GetTree().CallGroup("Slots", "Activate");
+		forTest.Text = "Selected Card:\nid: " + selectedCard.ID
+			+ "\nMana Cost: " + selectedCard.manaInt
+			+ "\nAttack: " + selectedCard.attackInt
+			+ "\nLife: " + selectedCard.lifeInt;
+	}
+
+	public void UnreadyToPair()
+	{
+		selectedCard = null;
+		GetTree().CallGroup("Slots", "Deactivate");
+		forTest.Text = "Selected Card:";
 	}
 
 	public Card SlotGetCard()
 	{
 		var x = (PackedScene)ResourceLoader.Load("res://Objects/Card.tscn");
 		Card y = (Card)x.Instance();
-		int z = selectedCard.ID;
-		int a = selectedCard.manaInt;
-		y.Initialise(z, a, selectedCard.attackInt, selectedCard.lifeInt, this);
-		mana.CardPlaced(a);
+
+		y.Initialise(selectedCard.ID,
+			selectedCard.manaInt,
+			selectedCard.attackInt,
+			selectedCard.lifeInt,
+			selectedCard.imageStr,
+			this);
+
+		mana.CardPlaced(selectedCard.manaInt);
 		selectedCard.QueueFree();
 		selectedCard = null;
+		forTest.Text = "Selected Card:";
 		return y;
 	}
 
 	public void Attack(int damage, Slot slot)
 	{
 		if (slot.PlayerLine)
+		{
 			rowEnemy.GetChild<Slot>(slot.ID).Attacked(damage);
+			forTest.Text = "Selected Card: ATTACK!!!\nDamage: " + damage;
+		}
 		else
 			rowAlie.GetChild<Slot>(slot.ID).Attacked(damage);
 	}
@@ -146,4 +180,10 @@ public class CombatScene : Node2D
 	{
 		return mana.mana;
 	}
+
+	public Manager_InGame getManager()
+	{
+		return manager;
+	}
+
 }

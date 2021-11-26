@@ -38,7 +38,8 @@ public class Mana : Node2D
 
     public void Refill()
     {
-        maxMana++;
+        if (maxMana < 10)
+            maxMana++;
         mana = maxMana;
         label.Text = mana.ToString();
         animPlayer.Play("Full");

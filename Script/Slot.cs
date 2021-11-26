@@ -11,8 +11,8 @@ public class Slot : Control
 	public bool Active = false;
 	public Card filledCard;
 	private CombatScene combatScene;
-	
-	//public TextureButton btn = GetNode<TextureButton>("Button");
+	private string[] cardStat;
+	private Manager_InGame manager;
 	
 	public override void _Ready()
 	{
@@ -27,9 +27,18 @@ public class Slot : Control
 
 		if (!PlayerLine)
 		{
+			manager = combatScene.getManager();
 			var x = (PackedScene)ResourceLoader.Load("res://Objects/Card.tscn");
 			filledCard = (Card)x.Instance();
-			filledCard.Initialise(ID, ID, ID, ID, combatScene);
+			cardStat = manager.NewCard(manager.deckEnemy[ID]);
+			
+			filledCard.Initialise(ID,
+				int.Parse(cardStat[0]),
+				int.Parse(cardStat[1]),
+				int.Parse(cardStat[2]),
+				cardStat[3],
+				combatScene);
+
 			filledCard.enemy = true;
 			filledCard.Deactivate();
 			AddChild(filledCard);
@@ -59,10 +68,10 @@ public class Slot : Control
 		this.Active = false;
 	}
 
-	public void ReadyToPair()
+	/*public void ReadyToPair()
 	{
 		this.Activate();
-	}
+	}*/
 
 	public void Attacked(int damage)
 	{

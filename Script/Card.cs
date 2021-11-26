@@ -13,6 +13,8 @@ public class Card : Control
 	public int manaInt;
 	public int lifeInt;
 	public int attackInt;
+	public string imageStr;
+	private bool selected = false;
 	public Slot slot;
 
 	private Texture txtClicked = (Texture)GD.Load("res://Image/Card_OutLine_Clicked.png");
@@ -21,6 +23,7 @@ public class Card : Control
 	private Label mana;
 	private Label life;
 	private Label attack;
+	private TextureRect image;
 	private CombatScene combatScene;
 
 	public override void _Ready()
@@ -31,20 +34,23 @@ public class Card : Control
 		attack = GetNode<Label>("Attack");
 	}
 
-	public void Initialise(int id, int m, int a, int l, CombatScene cs)
+	public void Initialise(int id, int m, int a, int l, string i, CombatScene cs)
 	{
 		btn = GetNode<TextureButton>("Button");
 		mana = GetNode<Label>("Mana");
 		life = GetNode<Label>("Life");
 		attack = GetNode<Label>("Attack");
+		image = GetNode<TextureRect>("Image");
 
 		ID = id;
 		manaInt = m;
 		attackInt = a;
 		lifeInt = l;
+		imageStr = i;
 		mana.Text = m.ToString();
 		attack.Text = a.ToString();
 		life.Text = l.ToString();
+		image.Texture = (Texture)GD.Load("res://Cards/Cards_Images/" + imageStr + ".png");
 		combatScene = cs;
 	}
 	
@@ -57,6 +63,7 @@ public class Card : Control
 				btn.TextureNormal = txtClicked;
 				combatScene.CardReadyToPair(this);
 				GetTree().CallGroup("Cards", "Deactivate");
+				selected = true;
 			}
 			else if (inBattle && !attacked)
 			{
@@ -65,6 +72,17 @@ public class Card : Control
 				GetTree().CallGroup("Cards", "Activate");
 				combatScene.Attack(attackInt, slot);
 			}
+		}
+	}
+
+		public override void _Process(float delta)
+	{
+		if (Input.IsActionPressed("RightClick") && selected)
+		{
+			btn.TextureNormal = null;
+			combatScene.UnreadyToPair();
+			GetTree().CallGroup("Cards", "Activate");
+			selected = false;
 		}
 	}
 

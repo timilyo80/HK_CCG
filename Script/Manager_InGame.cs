@@ -7,8 +7,13 @@ public class Manager_InGame : Node
     private object data_item;
     public int data_length;
     public int[] deckAlie = new int[20]; //{0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5};
+    public int[] deckEnemy = new int[] {11, 3, 2, 13, 1, 4};
     private Godot.Collections.Dictionary card;
     private Godot.Collections.Dictionary cardStats;
+
+    public bool music = true;
+    public bool sound = true;
+    public bool test = false;
 
 	public override void _Ready()
     {        
@@ -21,9 +26,12 @@ public class Manager_InGame : Node
         data_length = card.Count;
     }
 
-    public int[] NewCard(int ID)
+    public string[] NewCard(int ID)
     {
         cardStats = (Godot.Collections.Dictionary)card[ID.ToString()];
-        return new int[] {int.Parse(cardStats["Mana"].ToString()), int.Parse(cardStats["Attack"].ToString()), int.Parse(cardStats["Life"].ToString())};
+        return new string[] {cardStats["Mana"].ToString(),
+            cardStats["Attack"].ToString(),
+            cardStats["Life"].ToString(),
+            cardStats["Image"].ToString()};
     }
 }

@@ -4,127 +4,144 @@
     "Name" : "missingno",
     "Mana" : "0",
     "Attack" : "0",
-    "Life" : "0"
+    "Life" : "0",
+    "Image" : "Crawlid"
   },
 
   "1" :
   {
-    "Name" : "Zote",
-    "Mana" : "0",
-    "Attack" : "10",
-    "Life" : "10"
-
+    "Name" : "Crawlid",
+    "Mana" : "1",
+    "Attack" : "1",
+    "Life" : "1",
+    "Image" : "Crawlid"
   },
   "2" :
   {
-    "Name" : "Knight",
+    "Name" : "Wandering Husk",
     "Mana" : "2",
     "Attack" : "2",
-    "Life" : "2"
+    "Life" : "2",
+    "Image" : "Wandering_Husk"
   },
   "3" :
   {
-    "Name" : "Hornet",
+    "Name" : "Shrumal Warrior",
     "Mana" : "3",
     "Attack" : "3",
-    "Life" : "3"
+    "Life" : "3",
+    "Image" : "Shrumal_Warrior"
   },
   "4" :
   {
-    "Name" : "Hornet",
+    "Name" : "Husk Sentry",
     "Mana" : "4",
     "Attack" : "4",
-    "Life" : "4"
+    "Life" : "4",
+    "Image" : "Husk_Sentry"
   },
   "5" :
   {
-    "Name" : "Hornet",
+    "Name" : "Mantis Traitor",
     "Mana" : "5",
     "Attack" : "5",
-    "Life" : "5"
+    "Life" : "5",
+    "Image" : "Mantis_Traitor"
   },
   "6" :
   {
-    "Name" : "Hornet",
+    "Name" : "Hive Knight",
     "Mana" : "6",
     "Attack" : "6",
-    "Life" : "6"
+    "Life" : "6",
+    "Image" : "Hive_Knight"
   },
   "7" :
   {
-    "Name" : "Hornet",
+    "Name" : "Great Husk Sentry",
     "Mana" : "7",
     "Attack" : "7",
-    "Life" : "7"
+    "Life" : "7",
+    "Image" : "Great_Husk_Sentry"
   },
   "8" :
   {
-    "Name" : "Hornet",
+    "Name" : "Stalking Devout",
     "Mana" : "8",
     "Attack" : "8",
-    "Life" : "8"
+    "Life" : "8",
+    "Image" : "Stalking_Devout"
   },
   "9" :
   {
-    "Name" : "Hornet",
+    "Name" : "Brooding Mawlek",
     "Mana" : "9",
     "Attack" : "9",
-    "Life" : "9"
+    "Life" : "9",
+    "Image" : "Brooding_Mawlek"
   },
   "10" :
   {
-    "Name" : "Hornet",
+    "Name" : "Hollow Knight",
     "Mana" : "10",
     "Attack" : "10",
-    "Life" : "10"
+    "Life" : "10",
+    "Image" : "Hollow_Knight"
   },
   "11" :
   {
-    "Name" : "Hornet",
-    "Mana" : "10",
-    "Attack" : "10",
-    "Life" : "10"
+    "Name" : "Uoma",
+    "Mana" : "1",
+    "Attack" : "0",
+    "Life" : "2",
+    "Image" : "Uoma"
   },
   "12" :
   {
-    "Name" : "Hornet",
-    "Mana" : "10",
-    "Attack" : "10",
-    "Life" : "10"
+    "Name" : "Moss Charger",
+    "Mana" : "2",
+    "Attack" : "3",
+    "Life" : "1",
+    "Image" : "Moss_Charger"
   },
   "13" :
   {
-    "Name" : "Hornet",
-    "Mana" : "10",
-    "Attack" : "10",
-    "Life" : "10"
+    "Name" : "Marmu",
+    "Mana" : "3",
+    "Attack" : "0",
+    "Life" : "6",
+    "Image" : "Marmu"
   },
   "14" :
   {
     "Name" : "Hornet",
-    "Mana" : "10",
-    "Attack" : "10",
-    "Life" : "10"
+    "Mana" : "5",
+    "Attack" : "6",
+    "Life" : "4",
+    "Image" : "Hornet"
   },
   "15" :
   {
-    "Name" : "Hornet",
-    "Mana" : "10",
-    "Attack" : "10",
-    "Life" : "10"
+    "Name" : "Grimm",
+    "Mana" : "6",
+    "Attack" : "7",
+    "Life" : "5",
+    "Image" : "Grimm"
   },
   "16" :
   {
-    "Name" : "Hornet",
-    "Mana" : "10",
-    "Attack" : "10",
-    "Life" : "10"
+    "Name" : "Dung Defender",
+    "Mana" : "8",
+    "Attack" : "6",
+    "Life" : "10",
+    "Image" : "Dung_Defender"
   },
   "17" :
   {
-    "Name" : "Hornet",
-    "Mana" : "17",
-    "Attack" : "17",
-    "Life" : "17"
+    "Name" : "Knight",
+    "Mana" : "0",
+    "Attack" : "10",
+    "Life" : "10",
+    "Image" : "Knight"
   }
 }

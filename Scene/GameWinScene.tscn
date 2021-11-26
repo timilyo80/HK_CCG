@@ -47,9 +47,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer"]
+[node name="Music" type="AudioStreamPlayer" parent="CanvasLayer"]
 stream = ExtResource( 3 )
-autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Home" to="." method="_on_Home_pressed"]

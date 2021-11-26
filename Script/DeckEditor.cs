@@ -24,15 +24,21 @@ public class DeckEditor : Control
         deck_nmb = GetNode<Label>("Deck_NMB");
         grid_nmb = GetNode<Label>("Grid_NMB");
         grid_nmb.Text = (minID.ToString() + "-" + maxID.ToString());
-        deckCurrent = manager.deckAlie;
+        deckCurrent = new int[manager.deckAlie.Length];
+        manager.deckAlie.CopyTo(deckCurrent, 0);
         SetupIterator();
 
 
         for (int i = minID; i <= maxID; i++)
         {
             Card_ForEdit y = (Card_ForEdit)x.Instance();
-            int[] z = manager.NewCard(i);
-            y.Initialise(i, z[0], z[1], z[2], this);
+            string[] z = manager.NewCard(i);
+            y.Initialise(i,
+                int.Parse(z[0]),
+                int.Parse(z[1]),
+                int.Parse(z[2]),
+                z[3],
+                this);
             grid.AddChild(y);
         }
     }
@@ -96,8 +102,12 @@ public class DeckEditor : Control
             {
                 grid.GetChild<Card_ForEdit>(i-minID+1).Visible = true;
 
-                int[] z = manager.NewCard(deckCurrent[i]);
-                grid.GetChild<Card_ForEdit>(i-minID+1).ChangeInfo(deckCurrent[i], z[0], z[1], z[2]);
+                string[] z = manager.NewCard(deckCurrent[i]);
+                grid.GetChild<Card_ForEdit>(i-minID+1).ChangeInfo(deckCurrent[i],
+                    int.Parse(z[0]),
+                    int.Parse(z[1]),
+                    int.Parse(z[2]),
+                    z[3]);
             }
             else
             {
@@ -116,8 +126,12 @@ public class DeckEditor : Control
             {
                 grid.GetChild<Card_ForEdit>(i-minID).Visible = true;
 
-                int[] z = manager.NewCard(i);
-                grid.GetChild<Card_ForEdit>(i-minID).ChangeInfo(i, z[0], z[1], z[2]);
+                string[] z = manager.NewCard(i);
+                grid.GetChild<Card_ForEdit>(i-minID).ChangeInfo(i,
+                    int.Parse(z[0]),
+                    int.Parse(z[1]),
+                    int.Parse(z[2]),
+                    z[3]);
             }
             else
             {
@@ -126,9 +140,39 @@ public class DeckEditor : Control
         }
     }
 
+    public void Setup_Deck()
+    {
+        RandomNumberGenerator rng = new RandomNumberGenerator();
+        int i;
+        int num;
+        int nValidCards = 0;
+
+        for (i = 0; i < manager.deckAlie.Length; i++)
+            manager.deckAlie[i] = 0;
+
+        for (i = 0; i < deckCurrent.Length; i++)
+        {
+            if (deckCurrent[i] != 0)
+                nValidCards++;
+        }
+
+        for (i = 0; i < deckCurrent.Length; i++)
+        {
+            if (deckCurrent[i] != 0)
+            {
+                rng.Randomize();
+                do
+                {
+                    num = rng.RandiRange(0, nValidCards-1);
+                } while(manager.deckAlie[num] != 0);
+                manager.deckAlie[num] = deckCurrent[i];
+            }
+        }
+    }
+
     private void _on_btn_Start_pressed()
     {
-        manager.deckAlie = deckCurrent;
+        Setup_Deck();
         GetTree().ChangeScene("res://Scene/CombatScene.tscn");
     }
 

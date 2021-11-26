@@ -9,13 +9,18 @@ public class BaseAttack : Node2D
 	AnimationNodeStateMachinePlayback animState;
 	AudioStreamPlayer sound;
 
+	Manager_InGame manager;
+
 	public override void _Ready()
 	{
 		currentSprite = GetNode<Sprite>("Sprite");
 		animPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
+		manager = GetNode<Manager_InGame>("/root/DeckPlayer");
 		
 		animPlayer.Play("Attack");
 		sound = GetNode<AudioStreamPlayer>("Sound");
-		sound.Play();
+
+		if (manager.sound)
+			sound.Play();
 	}
 }

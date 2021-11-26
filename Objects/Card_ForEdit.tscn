@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Script/Card_ForEdit.cs" type="Script" id=1]
 [ext_resource path="res://Image/Card_OutLine.png" type="Texture" id=2]
 [ext_resource path="res://Image/Card_Base.png" type="Texture" id=3]
+[ext_resource path="res://Cards/Cards_Images/Crawlid.png" type="Texture" id=4]
 
 [node name="Card_ForEdit" type="Control"]
 anchor_right = 1.0
@@ -25,6 +26,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Image" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 8.0
+margin_right = -5.0
+margin_bottom = -7.0
+rect_min_size = Vector2( 115, 185 )
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Button" type="TextureButton" parent="."]
 margin_right = 125.0
 margin_bottom = 200.0
@@ -36,33 +51,39 @@ __meta__ = {
 }
 
 [node name="Life" type="Label" parent="."]
-margin_top = 170.0
-margin_right = 20.0
-margin_bottom = 184.0
+margin_left = 84.0
+margin_top = 164.0
+margin_right = 99.0
+margin_bottom = 178.0
 rect_scale = Vector2( 2, 2 )
 text = "0"
-align = 1
+align = 2
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Attack" type="Label" parent="."]
-margin_left = 84.0
-margin_top = 170.0
-margin_right = 104.0
-margin_bottom = 184.0
+margin_left = 8.0
+margin_top = 164.0
+margin_right = 24.0
+margin_bottom = 178.0
 rect_scale = Vector2( 2, 2 )
 text = "0"
-align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Mana" type="Label" parent="."]
-margin_left = 13.0
+margin_left = 9.0
 margin_top = 16.0
-margin_right = 53.0
+margin_right = 49.0
 margin_bottom = 30.0
 rect_scale = Vector2( 2, 2 )
 text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
